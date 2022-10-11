@@ -4,18 +4,10 @@
   padding: 0;
 }
 
-
-
-
 /* Universal Styles */
 
 html {
-  font-family: "Roboto", sans-serif;
   font-size: 16px;
-}
-
-body {
-  width: 100%;
 }
 
 .main-content {
@@ -39,15 +31,15 @@ body {
 
 .image-container img {
   display: block;
-  width: 90%;
-  height: 65%;
-  margin: 0 auto;
+  max-width: 100%
 }
 
-@media only screen and (max-width: 760px) {
+@media only screen and (max-width: 750px) {
   .main-content {
     top: 2.5625rem;
   }
+
+  
 }
 
 /* Header */
@@ -65,17 +57,20 @@ header .content {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 100%;
   padding: 30px;
+  height: 100%
 
 }
 
 header .desktop__logo {
-  flex: 1;
+  flex-wrap: 1;
   font-size: 1.5rem;
   text-decoration: none;
-  font-family: "Roboto";
+  color: #4A4A4A;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
 }
+
 
 header nav ul {
   display: flex;
@@ -93,10 +88,11 @@ nav a {
   font-size: 1rem;
   color: #4a4a4a;
   text-decoration: none;
+  font-family: "Roboto";
 }
 
 header .icon {
-  width: 2rem;
+  width: 1.8rem;
   padding-left: .75rem;
 }
 
@@ -104,7 +100,24 @@ header .mobile {
   display: none;
 }
 
-@media only screen and (max-width: 760px) {
+@media only screen and (max-width: 750px) {
+  mobile nav li:last-child {
+    display: block;
+  }
+
+  header .content {
+    padding: 1rem 1rem;
+  }
+
+  .button {
+    padding: .1875rem .5rem;
+    background-color: #9dc20b;
+    line-height: 1.6;
+    color: white;
+  }
+}
+
+@media only screen and (max-width: 450px) {
   header .desktop {
     display: none;
   }
@@ -135,23 +148,37 @@ header .mobile {
     line-height: 1.6;
     color: white;
   }
+
+  header .desktop__logo {
+
+    display: none;
+  }
+  header {
+    height: 48px;
+  }
 }
+
+
+
+
+
+
+
 
 /* Sign Up Section */
 
-.banner {
-  background-image: url("/resources/images/banner-landingpage.jpg");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-  
-}
+
 
 #sign-up-section {
   display: flex;
   justify-content: flex-start;
   align-items: flex-start;
   height: auto;
+  background-image: url("/resources/images/banner-landingpage.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  
   
 }
 
@@ -175,6 +202,8 @@ header .mobile {
 
 #sign-up-cta h1 {
   font-size: 3.125rem;
+  font-weight: 400;
+
 }
 
 #sign-up-cta h2 {
@@ -187,11 +216,14 @@ header .mobile {
 
 #sign-up-cta .cursive {
   font-family: "Damion", cursive;
+  line-height: 1.4;
 }
 
 #sign-up-cta .striking {
   font-family: "Rubik", sans-serif;
   padding-bottom: .75rem;
+  line-height: 1.4;
+
 }
 
 #sign-up-cta .button {
@@ -207,6 +239,7 @@ header .mobile {
   }
 
   #sign-up-cta {
+    background-color: none;
     position: static;
     width: auto;
     height: auto;
@@ -262,11 +295,16 @@ header .mobile {
 
 .feature .content {
   padding: 40px;
-  height: 187px
 }
 
 .feature img {
   padding-top: 32px;
+}
+
+.feature .image-container {
+  width: 90%;
+  height: 65%;
+  margin: 0 auto;
 }
 
 .feature h2 {
@@ -283,20 +321,28 @@ header .mobile {
   color: #4a4a4a;
 }
 
-@media only screen and (max-width: 890px) {
+@media only screen and (max-width: 760px) {
   .feature h2 {
     font-size: 1.125rem;
     line-height: 1.3;
     font-weight: normal;
+    font-weight: bold;
   }
 
   .feature h3 {
     font-size: .875rem;
     line-height: 1.4;
   }
+
+  .feature .content {
+    padding: 30px;
+    display: flex;
+  align-items: center;
+  flex-direction: column;
+  }
 }
 
-@media only screen and (max-width: 760px) {
+@media only screen and (max-width: 450px) {
   #features-section {
     flex-flow: column;
     padding: 0;
@@ -305,6 +351,18 @@ header .mobile {
   .feature {
     margin: 0;
     padding: 1.25rem 1rem 0 1rem;
+  }
+
+  .feature .content {
+    
+    display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  }
+
+  .feature img {
+    padding-top: 0px;
   }
 }
 
@@ -380,15 +438,19 @@ header .mobile {
 
 #quotes-section {
   background-color: #f3f3f3;
-  padding: 80px;
+  padding: 5rem 2.5rem;
 }
 
-#quotes-section content {
-  padding: 5rem 0;
+#quotes-section .center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  
 }
+
 
 #quotes-section .quote {
-  padding-right: 1.875rem;
   font-family: "Palatino", serif;
   font-size: 1.875rem;
   line-height: 1.1;
@@ -396,24 +458,27 @@ header .mobile {
   color: #4a4a4a;
 }
 
-#quotes-section quote-citation {
-  height: 1.875rem;
+#quotes-section .quote-citation {
+  padding: 30px;
 }
 
-@media only screen and (max-width: 760px) {
-  #quotes-section content {
-    padding: 1.875rem .625rem;
-  }
+@media only screen and (max-width: 450px) {
 
-  #quotes-section quote {
+  #quotes-section .quote {
     font-size: 1.5rem;
     line-height: 1.4;
   }
 
-  #quotes-section quote-citation {
+  #quotes-section .quote-citation {
     display: block;
     padding-top: 1rem;
     margin: auto;
+  
+  }
+
+  #quotes-section .center {
+    display: flex;
+    flex-direction: column;
   }
 }
 
@@ -428,14 +493,15 @@ footer .content {
   color: white;
   display: flex;
   font-size: .75rem;
+  
 }
 
 footer .copyright {
   flex-grow: 1;
 }
 
-@media only screen and (min-width: 760px) {
+@media only screen and (max-width: 450px) {
   footer .content {
     font-size: .625rem;
   }
-}
+} 
